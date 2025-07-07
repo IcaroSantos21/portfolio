@@ -1,38 +1,66 @@
 * {
+    
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
+    background: linear-gradient(135deg, oklch(14.7% 0.004 49.25), oklch(16% 0.03 240));
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: white;
+    min-height: 100vh;
 }
 
 header {
-    background: #333;
+    background: linear-gradient(180deg, oklch(12.9% 0.042 264.695), oklch(10% 0.03 250), oklch(8% 0.02 240));
     color: white;
-    padding: 1rem 0;
     position: fixed;
-    width: 100%;
+    left: 0;
     top: 0;
+    height: 100vh;
+    width: 120px;
     z-index: 1000;
 }
 
 nav {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
+    justify-content: space-between;
+    height: 100%;
+    padding: 2rem 0;
 }
 
 nav ul {
     display: flex;
+    flex-direction: column;
     list-style: none;
+    gap: 3rem;
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ccc;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
 }
 
 nav a {
@@ -41,7 +69,7 @@ nav a {
 }
 
 main {
-    margin-top: 80px;
+    margin-left: 120px;
 }
 
 section {
@@ -52,7 +80,7 @@ section {
 
 #hero {
     text-align: center;
-    background: #f4f4f4;
+    background: transparent;
 }
 
 #hero h2 {
@@ -68,14 +96,40 @@ section {
 }
 
 .projeto {
-    background: #f9f9f9;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     padding: 2rem;
     border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 @media (max-width: 768px) {
+    header {
+        width: 100%;
+        height: 60px;
+        bottom: 0;
+        top: auto;
+    }
+    
     nav {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 1rem;
+        gap: 1rem;
+    }
+    
+    nav ul {
+        flex-direction: row;
+        gap: 1rem;
+    }
+    
+    main {
+        margin-left: 0;
+        margin-bottom: 60px;
+    }
+    
+    .social-icons {
+        flex-direction: row;
         gap: 1rem;
     }
     
